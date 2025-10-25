@@ -27,8 +27,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
     <Routes>
    
-      <Route path='/' element={<App/>}/>
-      <Route path='/github' element={<Github />}/>
+      {/* <Route path='/' element={<App/>}/> */}
+      <Route path='/' element={<Github />}/>
       <Route path='/second' element={<SecondPage/>}/>
       <Route path='/store' element={<Store/>}/>
       <Route path='/product/:id' element={<ProductPage/>}/>
