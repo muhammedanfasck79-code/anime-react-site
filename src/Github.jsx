@@ -25,11 +25,10 @@ function Github() {
     }
   };
 
-  // Automatic hero slideshow
   useEffect(() => {
     const interval = setInterval(() => {
       setHeroIndex((prev) => (prev + 1) % heroImages.length);
-    }, 4000); // change image every 4 seconds
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -104,92 +103,97 @@ function Github() {
       </section>
 
       {/* Movie Tickets Section */}
-     <div style={{ padding: "60px 20px", textAlign: "center", backgroundColor: "#1a1a1a" }}>
-  <h2 style={{ fontSize: "40px", marginBottom: "50px", color: "#ff3b3f", fontWeight: "900" }}>
-    🎬 Anime Movie Tickets
-  </h2>
-  <div style={{ display: "flex", flexWrap: "wrap", gap: "30px", justifyContent: "center" }}>
-    {animeList.slice(0, -1).map((anime) => (  // <-- slice(0, -1) removes the last item
-      <div
-        key={anime.mal_id}
-        style={{
-          borderRadius: "20px",
-          overflow: "hidden",
-          width: "280px",
-          background: "linear-gradient(145deg, #ff6f61, #ff3b3f)",
-          color: "#fff",
-          boxShadow: "0 15px 30px rgba(0,0,0,0.5)",
-          transition: "transform 0.4s, box-shadow 0.4s",
-          cursor: "pointer",
-          position: "relative",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = "translateY(-15px) scale(1.05)";
-          e.currentTarget.style.boxShadow = "0 25px 40px rgba(0,0,0,0.6)";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = "translateY(0) scale(1)";
-          e.currentTarget.style.boxShadow = "0 15px 30px rgba(0,0,0,0.5)";
-        }}
-      >
-        <img
-          src={anime.images.jpg.image_url}
-          alt={anime.title}
-          style={{ width: "100%", height: "320px", objectFit: "cover", borderBottom: "5px solid #fff" }}
-        />
-        <div style={{ padding: "20px", textAlign: "left" }}>
-          <h3 style={{ margin: "0 0 10px", fontSize: "20px", fontWeight: "bold", textShadow: "1px 1px 4px rgba(0,0,0,0.6)" }}>
-            {anime.title}
-          </h3>
-          <p style={{ fontSize: "14px", lineHeight: "1.4", color: "#f0f0f0", height: "50px", overflow: "hidden" }}>
-            {anime.synopsis?.slice(0, 100)}...
-          </p>
-          <div style={{ marginTop: "15px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <span style={{
-              backgroundColor: "#fff",
-              color: "#ff3b3f",
-              fontWeight: "bold",
-              padding: "5px 12px",
-              borderRadius: "8px",
-              boxShadow: "0 5px 15px rgba(0,0,0,0.3)"
-            }}>
-              ₹499
-            </span>
-            <button
+      <div style={{ padding: "60px 20px", textAlign: "center", backgroundColor: "#1a1a1a" }}>
+        <h2 style={{ fontSize: "40px", marginBottom: "50px", color: "#ff3b3f", fontWeight: "900" }}>
+          🎬 Anime Movie Tickets
+        </h2>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "30px", justifyContent: "center" }}>
+          {animeList.slice(0, -1).map((anime) => (
+            <div
+              key={anime.mal_id}
               style={{
-                backgroundColor: "#ff3b3f",
+                borderRadius: "20px",
+                overflow: "hidden",
+                width: "280px",
+                background: "linear-gradient(145deg, #ff6f61, #ff3b3f)",
                 color: "#fff",
-                border: "none",
-                borderRadius: "12px",
-                padding: "8px 16px",
+                boxShadow: "0 15px 30px rgba(0,0,0,0.5)",
+                transition: "transform 0.4s, box-shadow 0.4s",
                 cursor: "pointer",
-                fontWeight: "bold",
-                boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
-                transition: "all 0.3s",
+                position: "relative",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "scale(1.1)";
-                e.currentTarget.style.boxShadow = "0 10px 20px rgba(0,0,0,0.5)";
+                e.currentTarget.style.transform = "translateY(-15px) scale(1.05)";
+                e.currentTarget.style.boxShadow = "0 25px 40px rgba(0,0,0,0.6)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-                e.currentTarget.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
+                e.currentTarget.style.transform = "translateY(0) scale(1)";
+                e.currentTarget.style.boxShadow = "0 15px 30px rgba(0,0,0,0.5)";
               }}
-              onClick={() => alert(`🎬 You bought a ticket for "${anime.title}" — ₹499`)}
             >
-              Buy Now ➜
-            </button>
-          </div>
+              <img
+                src={anime.images.jpg.image_url}
+                alt={anime.title}
+                style={{ width: "100%", height: "320px", objectFit: "cover", borderBottom: "5px solid #fff" }}
+              />
+              <div style={{ padding: "20px", textAlign: "left" }}>
+                <h3 style={{ margin: "0 0 10px", fontSize: "20px", fontWeight: "bold", textShadow: "1px 1px 4px rgba(0,0,0,0.6)" }}>
+                  {anime.title}
+                </h3>
+                <p style={{ fontSize: "14px", lineHeight: "1.4", color: "#f0f0f0", height: "50px", overflow: "hidden" }}>
+                  {anime.synopsis?.slice(0, 100)}...
+                </p>
+                <div style={{ marginTop: "15px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span style={{
+                    backgroundColor: "#fff",
+                    color: "#ff3b3f",
+                    fontWeight: "bold",
+                    padding: "5px 12px",
+                    borderRadius: "8px",
+                    boxShadow: "0 5px 15px rgba(0,0,0,0.3)"
+                  }}>
+                    ₹499
+                  </span>
+                  <button
+                    style={{
+                      backgroundColor: "#ff3b3f",
+                      color: "#fff",
+                      border: "none",
+                      borderRadius: "12px",
+                      padding: "8px 16px",
+                      cursor: "pointer",
+                      fontWeight: "bold",
+                      boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
+                      transition: "all 0.3s",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.1)";
+                      e.currentTarget.style.boxShadow = "0 10px 20px rgba(0,0,0,0.5)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                      e.currentTarget.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
+                    }}
+                    onClick={() => alert(`🎬 You bought a ticket for "${anime.title}" — ₹499`)}
+                  >
+                    Buy Now ➜
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    ))}
-  </div>
-</div>
 
-
-
+      {/* Footer */}
+      <footer style={{ backgroundColor: "#111", color: "#fff", textAlign: "center", padding: "30px 20px" }}>
+        <p style={{ margin: 0, fontSize: "16px" }}>
+          © 2025 Anime Tickets. Created by <strong>Muhammed Anfas</strong>
+        </p>
+      </footer>
     </div>
   );
 }
 
 export default Github;
+

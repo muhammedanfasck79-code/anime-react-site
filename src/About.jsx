@@ -176,6 +176,12 @@ function About() {
           </button>
         </form>
       </div>
+
+       <footer style={{ backgroundColor: "#111", color: "#fff", textAlign: "center", padding: "30px 20px" }}>
+        <p style={{ margin: 0, fontSize: "16px" }}>
+          © 2025 Anime Tickets. Created by <strong>Muhammed Anfas</strong>
+        </p>
+      </footer>
     </div>
   );
 }

@@ -42,9 +42,9 @@ function Navbar2() {
         <li>
           <Link to="/season" style={{ color: "#fff", textDecoration: "none" }}>Seasons</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="" style={{ color: "#fff", textDecoration: "none" }}>Top Anime</Link>
-        </li>
+        </li> */}
         <li>
          <Link to="/about" style={{ color: "#fff", textDecoration: "none" }}>About</Link>
         </li>
@@ -77,6 +77,7 @@ function Navbar2() {
           🔍
         </button>
       </div>
+      
     </nav>
   );
 }
